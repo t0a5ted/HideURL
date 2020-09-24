@@ -3,7 +3,7 @@ This Short Python Script Hides Long Phishing URLs With da.gd And Has The Option 
 
 1. Install HideURL
 ‎
-```git clone https://github.com/t0a5ted/HideURL```
+```git clone https://github.com/t0a5ted/HideURL.git```
 
 2. Go Into HideURL Directory
 ‎
