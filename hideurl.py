@@ -1,8 +1,13 @@
 import os
 import colorama
 from colorama import Fore, Style
+import pyfiglet
 from pyfiglet import figlet_format
 import time
+import urllib.request
+
+
+
 
 #banner
 os.system("clear")
@@ -14,10 +19,25 @@ print("Made By t0a5ted                                          version 1.0" + "
 #collect user input for url
 def askforurl():
 	global url
+	website_is_up = ""
 	longurl = input(Fore.BLUE + "Enter URL to Hide: ")
 	print(Style.RESET_ALL)
-	if any(i in longurl for i in ('https://', 'http://')) == False:
-		print(Fore.RED + "\nNot a Valid URL (Add \"https://\" or \"http://\" if you haven't)\n\n")
+	try:
+		global status_code
+		status_code = urllib.request.urlopen(longurl).getcode()
+	except:
+		print(Fore.RED + "\nURL Does Not Exist or Website Not Online\n")
+		askforurl()
+
+	else:
+		website_is_up = status_code == 200
+
+
+
+	
+	
+	if any(i in longurl for i in ('https://', 'http://', ' ')) == False or website_is_up == "False":
+		print(Fore.RED + "\nNot a Valid URL (Add \"https://\" or \"http://\" if you haven't) OR URL Host Not Online\n\n")
 		print(Style.RESET_ALL)
 		askforurl()
 	else:
