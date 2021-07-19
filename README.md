@@ -1,5 +1,5 @@
 # HideURL
-This Short Python Script Hides Long Phishing URLs With da.gd And Has The Option To Add Customizable Key Words.
+This Short Python Script Hides Long URLs With da.gd And Has The Option To Add Customizable Key Words.
 
 1. Install HideURL
 ‎
